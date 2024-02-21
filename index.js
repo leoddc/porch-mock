@@ -27,9 +27,9 @@ app.get('/donor-list', (req, res) => {
     }
     while (i < numberOfFakes);
 
-    // if (Math.random() > errorChance) {
-    //     return res.status(400).send('Error getting donor list.');
-    // }
+    if (Math.random() < errorChance) {
+        return res.status(400).send('Error getting donor list.');
+    }
 
     return res.send(donorList);
 });
