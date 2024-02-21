@@ -23,12 +23,13 @@ app.get('/donor-list', (req, res) => {
     let i = 0;
     do {
         donorList.push(createRandomRow());
+        i++
     }
     while (i < numberOfFakes);
 
-    if (Math.random() > errorChance || req.query.error) {
-        return res.status(400).send('Error getting donor list.');
-    }
+    // if (Math.random() > errorChance) {
+    //     return res.status(400).send('Error getting donor list.');
+    // }
 
     return res.send(donorList);
 });
