@@ -12,8 +12,8 @@ function createRandomRow() {
         donatingFood: faker.datatype.boolean(),
         donatingMoney: faker.datatype.boolean(),
         location: {
-            lat: faker.location.latitude,
-            lon: faker.location.longitude
+            lat: faker.location.latitude(),
+            lon: faker.location.longitude()
         },
     };
 }
